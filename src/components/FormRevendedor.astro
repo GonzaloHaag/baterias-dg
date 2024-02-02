@@ -1,0 +1,71 @@
+<form class="flex flex-col gap-y-8 w-full mt-10 sm:max-w-[600px] sm:mx-auto xl:w-full" autocomplete="off" id="form">
+  <div class="flex items-center gap-x-2 w-full">
+    <input
+      name="from_name"
+      class="w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-azul-dg rounded-md"
+      type="text"
+      placeholder="NOMBRE"
+      required
+    />
+    <input
+      class="w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-azul-dg rounded-md"
+      type="text"
+      placeholder="APELLIDO"
+    />
+  </div>
+  <div class="flex items-center gap-x-2">
+    <input
+      name="from_email"
+      class="w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-azul-dg rounded-md"
+      type="email"
+      placeholder="EMAIL"
+      required
+    />
+    <input
+      name="from_phone"
+      class="w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-azul-dg rounded-md"
+      type="number"
+      placeholder="TELÉFONO"
+      required
+    />
+  </div>
+  <textarea
+    name="message"
+    placeholder="MENSAJE"
+    class="min-h-[200px] indent-2 md:indent-5 py-2 md:py-5 border-2 border-negro-dg outline-none focus:border-azul-dg rounded-md"
+  ></textarea>
+  <div class="w-full flex justify-end">
+    <input
+      class="bg-azul-dg px-8 py-2 text-white font-medium cursor-pointer rounded-md hover:bg-negro-dg hover:scale-105 transition-all duration-200"
+      type="submit"
+      id="button"
+      value="Enviar"
+    />
+  </div>
+</form>
+<script>
+  import emailjs from '@emailjs/browser';
+  (function(){
+      emailjs.init("vp2jsomoHUw1WBeC7");
+   })();
+  const form = document.getElementById('form') as HTMLFormElement
+  const btn = document.getElementById("button") as HTMLInputElement; //Le digo que es del tipo HTMLInputElement
+  form?.addEventListener("submit", function (event) {
+    event.preventDefault();
+    btn.value = "Enviando...";
+
+    const serviceID = "default_service";
+    const templateID = "template_pu1473d";
+
+    emailjs.sendForm(serviceID, templateID, this).then(
+      () => {
+        btn.value = "Formulario enviado";
+        form.reset();
+      },
+      (err:any) => {
+        btn.value = "Ocurrió un error";
+      }
+    );
+  });
+</script>
+

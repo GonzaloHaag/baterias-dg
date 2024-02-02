@@ -1,0 +1,39 @@
+<form class="flex flex-col gap-y-8 w-full mt-10 text-white sm:max-w-[600px] sm:mx-auto xl:w-full" autocomplete="off" id="form-contact">
+    <div class="flex items-center gap-x-2 w-full">
+        <input name="from_name" class="bg-inherit w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-white rounded-md" type="text" placeholder="NOMBRE" required />
+        <input name="apellido" class="bg-inherit w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-white rounded-md" type="text" placeholder="APELLIDO" />
+    </div>
+    <div class="flex items-center gap-x-2">
+        <input name="from_email" class="bg-inherit w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-white rounded-md" type="email" placeholder="EMAIL" required />
+        <input name="from_phone" class="bg-inherit w-2/4 py-1 md:py-5 indent-2 md:indent-5 border-2 border-negro-dg outline-none focus:border-white rounded-md" type="number" placeholder="TELÉFONO" required />
+    </div>
+    <textarea name="asunto" placeholder="ASUNTO" class="bg-inherit min-h-[200px] indent-2 md:indent-5 py-2 md:py-5 border-2 border-negro-dg outline-none focus:border-white rounded-md" />
+    <div class="bg-inherit w-full flex justify-end">
+        <input class="bg-negro-dg hover:bg-black hover:scale-105 transition-all duration-200 px-8 py-2 text-white font-medium cursor-pointer rounded-md" type="submit" value="Enviar" id="button-contact" />
+    </div>
+</form>
+<script>
+    import emailjs from '@emailjs/browser';
+    (function(){
+      emailjs.init("vp2jsomoHUw1WBeC7");
+   })();
+    const form = document.getElementById('form-contact') as HTMLFormElement
+    const btn = document.getElementById("button-contact") as HTMLInputElement; //Le digo que es del tipo HTMLInputElement
+    form?.addEventListener("submit", function (event) {
+      event.preventDefault();
+      btn.value = "Enviando...";
+  
+      const serviceID = "default_service";
+      const templateID = "template_lrahnba";
+  
+      emailjs.sendForm(serviceID, templateID, this).then(
+        () => {
+          btn.value = "Formulario enviado";
+          form.reset();
+        },
+        (err:any) => {
+          btn.value = "Ocurrió un error";
+        }
+      );
+    });
+  </script>

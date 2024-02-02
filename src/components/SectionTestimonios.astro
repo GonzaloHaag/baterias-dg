@@ -1,0 +1,170 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+const testimonios = [
+  {
+    text: "Compré una batería para mi camioneta aquí y estoy realmente impresionado con su rendimiento. ¡Recomiendo esta distribuidora a todos mis amigos!",
+    author: "Martin H.",
+  },
+  {
+    text: "Las baterías de esta distribuidora han superado mis expectativas en términos de calidad y durabilidad. ¡Recomendado!",
+    author: "Juan P.",
+  },
+
+  {
+    text: "Atención impecable y productos de primera.",
+    author: "María G.",
+  },
+
+  {
+    text: "Excelente servicio y batería de alta calidad! Mi camión funciona como nuevo.",
+    author: "Horacio M.",
+  },
+];
+---
+
+<div
+  class="bg-negro-dg min-h-screen w-full py-10 xl:py-0 flex items-center text-white scroll-mt-[64px] xl:scroll-mt-0"
+  id='testimonios'
+>
+  <SectionContainer>
+    <div class="flex items-center justify-center md:justify-start gap-x-2 md:gap-x-5">
+      <h3 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">TESTIMONIOS</h3>
+      <h4 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">CLIENTES</h>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5 mt-10 xl:mt-24">
+      {
+        testimonios.map((testimonio) => (
+          <div class="relative bg-slate-900 flex flex-col items-center text-center justify-between px-5 py-8 min-h-[200px] rounded-lg">
+            <svg
+            class="absolute -top-[15px] left-[50%] right-[50%]"
+              width="30"
+              height="30"
+              viewBox="0 0 24 24"
+              stroke-width="2"
+              stroke="currentColor"
+              fill="none"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <>
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M10 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5" />
+                <path d="M19 11h-4a1 1 0 0 1 -1 -1v-3a1 1 0 0 1 1 -1h3a1 1 0 0 1 1 1v6c0 2.667 -1.333 4.333 -4 5" />
+              </>
+            </svg>
+            {/**Card */}
+            <p class="text-balance min-h-[200px]">"{testimonio.text}"</p>
+            <span class="font-bold">{testimonio.author}</span>
+            <hr class="absolute w-full bottom-[70px] h-[2px] bg-white" />
+            <div class="flex items-center gap-1 mt-10">
+              {/**Estrellas */}
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="blue"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                    stroke-width="0"
+                    fill="blue"
+                  />
+                </>
+              </svg>
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="blue"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                    stroke-width="0"
+                    fill="blue"
+                  />
+                </>
+              </svg>
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="blue"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                    stroke-width="0"
+                    fill="blue"
+                  />
+                </>
+              </svg>
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="blue"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                    stroke-width="0"
+                    fill="blue"
+                  />
+                </>
+              </svg>
+              <svg
+                width="25"
+                height="25"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="blue"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <>
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M8.243 7.34l-6.38 .925l-.113 .023a1 1 0 0 0 -.44 1.684l4.622 4.499l-1.09 6.355l-.013 .11a1 1 0 0 0 1.464 .944l5.706 -3l5.693 3l.1 .046a1 1 0 0 0 1.352 -1.1l-1.091 -6.355l4.624 -4.5l.078 -.085a1 1 0 0 0 -.633 -1.62l-6.38 -.926l-2.852 -5.78a1 1 0 0 0 -1.794 0l-2.853 5.78z"
+                    stroke-width="0"
+                    fill="blue"
+                  />
+                </>
+              </svg>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </SectionContainer>
+</div>
+<style>
+  h3{
+    font-family: 'Gobold-relleno';
+  }
+  h4{
+    font-family: 'Gobold-noRelleno';
+  }
+</style>

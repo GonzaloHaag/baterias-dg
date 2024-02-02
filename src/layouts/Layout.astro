@@ -1,0 +1,56 @@
+---
+// Supports weights 100-900
+import "@fontsource-variable/montserrat";
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+  description:string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="author" content="Gonzalo Haag" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="icon" type="image/svg+xml" href="/faviconDG.webp" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <Header />
+    {/*Fijo en todas las rutas */}
+    <slot />
+    {/*Aqui se renderiza todo lo que cambia */}
+  </body>
+</html>
+<style is:global>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+  html {
+    font-family: "Montserrat", sans-serif;
+    scroll-behavior: smooth;
+  }
+  body {
+    min-height: 100vh;
+    overscroll-behavior: none;
+  }
+  @font-face {
+    font-family: "Gobold-Relleno";
+    src: url(/fonts/Gobold-Regular-Italic.woff2);
+    font-display: swap;
+  }
+  @font-face {
+    font-family: "Gobold-noRelleno";
+    src: url(/fonts/Gobold-Hollow-Bold-Italic.woff2);
+    font-display: swap;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+</style>

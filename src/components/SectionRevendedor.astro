@@ -1,0 +1,160 @@
+---
+import FormRevendedor from "./FormRevendedor.astro";
+---
+
+<section class="flex flex-col xl:flex-row scroll-mt-[64px]" id="revendedores">
+  <div
+    class="bg-[url('/images/imgRevendedor.webp')] min-h-screen w-full bg-cover bg-center bg-no-repeat py-10"
+  >
+    <section
+      class="w-full text-white h-full flex flex-col items-center justify-evenly px-5 md:px-0"
+    >
+      <div class="flex flex-col text-start items-center gap-y-1 sm:gap-y-2">
+        <h3 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">
+          CONVERTITE EN
+        </h3>
+        <h4 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">
+          DISTRIBUIDOR
+        </h4>
+      </div>
+      <div class="flex flex-col gap-y-0 mt-8 text-start xl:text-center">
+        <p class="text-lg md:text-xl text-center">
+          <strong>VENTAJAS</strong> DE SER REVENDEDOR:
+        </p>
+        <div class="flex flex-col gap-y-14 mt-10">
+          <div class="flex items-center gap-x-2">
+            {/*Container de icono y texto */}
+            <div>
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M9 15l6 -6"></path><circle
+                  cx="9.5"
+                  cy="9.5"
+                  r=".5"
+                  fill="currentColor"></circle><circle
+                  cx="14.5"
+                  cy="14.5"
+                  r=".5"
+                  fill="currentColor"></circle><path
+                  d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7a2.2 2.2 0 0 0 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1a2.2 2.2 0 0 0 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1"
+                ></path></svg
+              >
+            </div>
+
+            <p class="text-xl text-pretty">
+              Gran variedad de <strong>ofertas, descuentos y beneficios</strong>
+            </p>
+          </div>
+          <div class="flex items-center gap-x-2">
+            {/*Container de icono y texto */}
+            <div>
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M18 8a3 3 0 0 1 0 6"></path><path
+                  d="M10 8v11a1 1 0 0 1 -1 1h-1a1 1 0 0 1 -1 -1v-5"></path><path
+                  d="M12 8h0l4.524 -3.77a.9 .9 0 0 1 1.476 .692v12.156a.9 .9 0 0 1 -1.476 .692l-4.524 -3.77h-8a1 1 0 0 1 -1 -1v-4a1 1 0 0 1 1 -1h8"
+                ></path></svg
+              >
+            </div>
+
+            <p class="text-xl text-pretty">
+              Apoyo de <strong>marketing</strong> y materiales promocionales
+            </p>
+          </div>
+          <div class="flex items-center gap-x-2">
+            {/*Container de icono y texto */}
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-message-dots"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M4 21v-13a3 3 0 0 1 3 -3h10a3 3 0 0 1 3 3v6a3 3 0 0 1 -3 3h-9l-4 4"
+                ></path><path d="M12 11l0 .01"></path><path d="M8 11l0 .01"
+                ></path><path d="M16 11l0 .01"></path></svg
+              >
+            </div>
+
+            <p class="text-xl text-pretty">
+              <strong>Asesoramiento</strong> Técnico Especializado
+            </p>
+          </div>
+          <div class="flex items-center gap-x-2">
+            {/*Container de icono y texto */}
+            <div>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="icon icon-tabler icon-tabler-list"
+                width="40"
+                height="40"
+                viewBox="0 0 24 24"
+                stroke-width="2"
+                stroke="currentColor"
+                fill="none"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+                  d="M9 6l11 0"></path><path d="M9 12l11 0"></path><path
+                  d="M9 18l11 0"></path><path d="M5 6l0 .01"></path><path
+                  d="M5 12l0 .01"></path><path d="M5 18l0 .01"></path></svg
+              >
+            </div>
+
+            <p class="text-xl text-pretty">
+              Amplio <strong>inventario y variedad</strong> de productos
+            </p>
+          </div>
+        </div>
+        <div
+          class="flex w-full items-center text-center justify-center xl:justify-start mt-56 pl-2"
+        >
+          <a href="https://api.whatsapp.com/send?phone=543424670267" rel="noreferrer" target="_blank" class="bg-rojo-dg px-5 py-2 rounded-md font-medium">
+            Contactános
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+  <section class="bg-white w-full min-h-screen flex flex-col justify-center xl:justify-normal px-5 xl:px-20 py-10 xl:pt-60 xl:pb-0">
+    <div class="w-full">
+      <p
+        class="text-negro-dg text-balance text-xl max-w-[400px] text-center mx-auto"
+      >
+        SOLICITANOS MÁS INFORMACIÓN SOBRE <strong
+          >CÓMO SER UN REVENDEDOR.</strong>
+      </p>
+      <FormRevendedor />
+    </div>
+  </section>
+</section>
+<style>
+   h3{
+    font-family: 'Gobold-noRelleno';
+  }
+  h4{
+    font-family: 'Gobold-relleno';
+  }
+</style>

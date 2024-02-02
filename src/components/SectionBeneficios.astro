@@ -1,0 +1,69 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import beneficio1 from '../../public/images/beneficio1.webp';
+import beneficio2 from '../../public/images/beneficio2.webp';
+import beneficio3 from '../../public/images/beneficio3.webp';
+import beneficio4 from '../../public/images/beneficio4.webp';
+
+const beneficios = [
+    {
+        imagen:beneficio1,
+        title:'ALTO',
+        strong:'RENDIMIENTO',
+        text:'Potencia y durabilidad garantizadas'
+    },
+    {
+        imagen:beneficio2,
+        title:'AMPLIA',
+        strong:'VARIEDAD',
+        text:'Encuentra la batería perfecta para tu vehículo.'
+    }, 
+    {
+        imagen:beneficio3,
+        title:'COMPATIBILIDAD',
+        strong:'GARANTIZADA',
+        text:'Adaptada a todas las marcas y modelos de vehículos.'
+    },
+    {
+        imagen:beneficio4,
+        title:'ASESORAMIENTO',
+        strong:'PERSONALIZADO',
+        text:'Nuestro equipo te guiará en tu elección. Garantía de satisfacción del 100%.'
+    }
+]
+import { Image } from "astro:assets";
+---
+
+<div class="bg-azul-dg w-full text-white min-h-screen flex items-center py-10 xl:py-0 scroll-mt-[64px] xl:scroll-mt-0" id='beneficios'>
+    <SectionContainer>
+        <div class="text-center lg:text-start flex flex-col gap-y-1 sm:gap-y-2">
+            <h3 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">BENEFICIOS DE</h3>
+            <h4 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">NUESTRAS BATERÍAS</h3>
+        </div>
+        <div class="flex flex-wrap gap-x-6 justify-center lg:justify-between items-center mt-10 xl:mt-24">
+            {
+                beneficios.map((beneficio) => (
+                    <div class="flex flex-col text-center items-center">
+                        
+                        <Image src={beneficio.imagen} alt={beneficio.title} width={250} />
+                        <div class="bg-negro-dg w-full py-2 rounded-md">
+                            <p>{beneficio.title}</p>
+                            <p class="font-semibold leading-4">{beneficio.strong}</I>
+                        </div>
+                        <span class="text-balance max-w-[250px] min-h-20">{beneficio.text}</span>
+                    </div>
+                ))
+            }
+        </div>
+    </SectionContainer>
+</div>
+<style>
+    /**Estilos que solo se aplican a este componente */
+    /**<img src={beneficio.imagen} alt={beneficio.title} width={250} height={250} loading="lazy" /> */ 
+   h3{
+    font-family: 'Gobold-relleno';
+   }
+   h4{
+    font-family: 'Gobold-noRelleno';
+   }
+</style>

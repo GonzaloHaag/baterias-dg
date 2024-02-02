@@ -1,0 +1,114 @@
+{/*Overlay que aparecera solo si el menu esta abierto */}
+<div id="divOverlay" class="hidden lg:hidden"></div>
+<nav class="flex lg:hidden">
+  <svg
+    id="button-openMenu"
+    class="cursor-pointer"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    stroke-width="2"
+    stroke="currentColor"
+    fill="none"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path d="M4 6h16"
+    ></path><path d="M7 12h13"></path><path d="M10 18h10"></path></svg
+  >
+  <div
+    class="fixed z-10 inset-0 bg-white flex flex-col w-3/4 md:w-2/5 min-h-screen items-center gap-y-5 pt-12 font-semibold -translate-x-full invisible opacity-0 transition-all duration-300"
+    id="menuDespegable"
+  >
+    {/*Menu a desplegar */}
+    <svg
+      id="button-closeMenu"
+      class="absolute right-5 top-5 cursor-pointer"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      fill="none"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+        d="M18 6l-12 12"></path><path d="M6 6l12 12"></path></svg
+    >
+    <a class="nav-link text-azul-dg" href="#">Inicio</a>
+    <a class="nav-link" href="#beneficios">Beneficios</a>
+    <a class="nav-link" href="#revendedores">Revendedores</a>
+    <a class="nav-link" href="#testimonios">Testimonios</a>
+    <a class="nav-link" href="#servicios">Servicios</a>
+    <a class="nav-link" href="#contacto">Contacto</a>
+    <div class="flex items-center gap-x-2">
+      <a href="https://www.facebook.com/bateriasdariogiagnoni/" rel="noreferrer" target="_blank">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="blue"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+          ></path></svg
+        >
+      </a>
+      <a href="https://www.instagram.com/bateriasdariogiagnoni" rel="noreferrer" target="_blank">
+        <svg
+          width="30"
+          height="30"
+          viewBox="0 0 24 24"
+          stroke-width="2"
+          stroke="blue"
+          fill="none"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+          ></path><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"
+          ></path><path d="M16.5 7.5l0 .01"></path></svg
+        >
+      </a>
+    </div>
+  </div>
+</nav>
+<script>
+  let buttonOpenMenu = document.getElementById("button-openMenu");
+  let buttonCloseMenu = document.getElementById("button-closeMenu");
+  let menuDespegable = document.getElementById("menuDespegable");
+  let divOverlay = document.getElementById("divOverlay");
+  buttonOpenMenu?.addEventListener("click", () => {
+    menuDespegable?.classList.remove(
+      "-translate-x-full",
+      "invisible",
+      "opacity-0"
+    );
+    divOverlay?.classList.remove('hidden')
+    divOverlay?.classList.add('absolute','min-h-screen','bg-black/85','inset-0','w-full')
+  });
+  buttonCloseMenu?.addEventListener('click',() => {
+    menuDespegable?.classList.add(
+    "-translate-x-full",
+      "invisible",
+      "opacity-0"
+    );
+    divOverlay?.classList.add('hidden');
+  })
+    /**Script para el active link */
+    let navLinks = document.querySelectorAll('.nav-link');
+   navLinks.forEach((navLink) => {
+    navLink.addEventListener('click',() => {
+      document.querySelector('.text-azul-dg')?.classList.remove('text-azul-dg');
+      navLink.classList.add('text-azul-dg');
+      menuDespegable?.classList.add(
+    "-translate-x-full",
+      "invisible",
+      "opacity-0"
+    );
+    divOverlay?.classList.add('hidden');
+    })
+   })
+</script>

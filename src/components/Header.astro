@@ -1,0 +1,67 @@
+---
+import NavbarMobile from "./NavbarMobile.astro";
+---
+
+<header class="bg-white shadow-md flex justify-between items-center h-16 sticky top-0 z-20 animate-fade-up">
+  <div
+    class="container w-full min-[576px]:max-w-[540px]: mx-auto min-[768px]:max-w-[720px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] flex items-center justify-between px-5 xl:px-0"
+  >
+    <img
+      class="w-16 lg:w-20 h-auto"
+      src="/images/logoDg.webp"
+      alt="Logo Baterias DG"
+    />
+    <nav class="hidden lg:flex items-center gap-x-6 font-semibold text-base"> {/*Nav que aparecera a partir de 1024px */}
+      <a class="nav-link text-azul-dg hover:text-azul-dg hover:scale-105 transition-all duration-200 " href="#">Inicio</a>
+      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#beneficios">Beneficios</a>
+      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#revendedores">Revendedores</a>
+      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#testimonios">Testimonios</a>
+      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#servicios">Servicios</a>
+      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#contacto">Contacto</a>
+      <div class="flex items-center ml-4 gap-x-1">
+        <a href="https://www.facebook.com/bateriasdariogiagnoni/" rel="noreferrer" target="_blank">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="blue"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M7 10v4h3v7h4v-7h3l1 -4h-4v-2a1 1 0 0 1 1 -1h3v-4h-3a5 5 0 0 0 -5 5v2h-3"
+            ></path></svg
+          >
+        </a>
+        <a href="https://www.instagram.com/bateriasdariogiagnoni" rel="noreferrer" target="_blank">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            stroke-width="2"
+            stroke="blue"
+            fill="none"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+              d="M4 4m0 4a4 4 0 0 1 4 -4h8a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-8a4 4 0 0 1 -4 -4z"
+            ></path><path d="M12 12m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"
+            ></path><path d="M16.5 7.5l0 .01"></path></svg
+          >
+        </a>
+      </div>
+    </nav>
+    <NavbarMobile />
+  </div>
+</header>
+<script>
+  /**Script para el active link */
+   let navLinks = document.querySelectorAll('.nav-link');
+   navLinks.forEach((navLink) => {
+    navLink.addEventListener('click',() => {
+      document.querySelector('.text-azul-dg')?.classList.remove('text-azul-dg');
+      navLink.classList.add('text-azul-dg')
+    })
+   })
+</script>

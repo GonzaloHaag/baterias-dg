@@ -1,0 +1,65 @@
+---
+import SectionContainer from "./SectionContainer.astro";
+import service1 from '../../public/images/servicio1.webp';
+import service2 from '../../public/images/servicio2.webp';
+import service3 from '../../public/images/servicio3.webp';
+
+import { Image } from "astro:assets";
+---
+
+<div class="min-h-screen w-full py-10 xl:py-0 flex items-center bg-white scroll-mt-[64px] xl:scroll-mt-0" id="servicios">
+   <SectionContainer>
+    <div class="flex items-center justify-center md:justify-start gap-x-2 md:gap-x-5">
+        <h3 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">NUESTROS</h3>
+        <h4 class="text-3xl sm:text-5xl md:text-6xl xl:text-7xl">SERVICIOS</h4>
+    </div>
+    <div class="mt-10 xl:mt-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div class="relative flex flex-col text-center gap-2">
+          {/**Card */}
+          <Image src={service1} alt='Servicio 1' />
+          <p class="m-0 p-0 bg-negro-dg text-white min-h-[60px] flex flex-col text-center justify-center text-balance">
+            <strong>AUXILIO </strong> DE BATERÍAS 24/7
+          </p>
+          <p class="p-0 text-balance max-w-[85%] mx-auto my-0">
+            ¡Asistencia Rápida y Confiable! ¿Quedaste parado con una batería
+            descargada? Nuestro equipo de expertos está listo para brindarte
+            asistencia en carretera.
+          </p>
+        </div>
+        <div class="relative flex flex-col text-center gap-2">
+          {/**Card */}
+          <Image src={service2} alt='Servicio 2' />
+          
+          <p class="m-0 p-0 bg-negro-dg text-white min-h-[60px] flex flex-col text-center justify-center text-balance">
+            <strong>RECICLAJE RESPONSABLE </strong> DE BATERÍAS
+          </p>
+          <p class="p-0 text-balance max-w-[85%] mx-auto my-0">
+            ¡Cuidando el Medio Ambiente! En nuestra distribuidora, creemos en
+            la importancia de preservar el medio ambiente. Por eso, ofrecemos
+            un servicio de reciclaje responsable de baterías usadas.
+          </p>
+        </div>
+        <div class="relative flex flex-col text-center gap-2">
+          {/**Card */}
+          <Image src={service3} alt='Servicio 3' />
+          
+          <p class="m-0 p-0 bg-negro-dg text-white min-h-[60px] flex flex-col text-center justify-center text-balance">
+            <strong>MANTENIMIENTO </strong> PROFESIONAL DE BATERÍAS
+          </p>
+          <p class="p-0 text-balance max-w-[85%] mx-auto my-0">
+            ¡Optimizando su Vida Útil! Nuestro equipo de técnicos altamente
+            capacitados ofrece un servicio de mantenimiento preventivo y
+            correctivo para baterías de todo tipo de vehículos.
+          </p>
+        </div>
+      </div>
+   </SectionContainer>
+</div>
+<style>
+  h3{
+    font-family: 'Gobold-noRelleno';
+  }
+  h4{
+    font-family: 'Gobold-relleno';
+  }
+</style>
