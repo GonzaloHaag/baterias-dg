@@ -2,24 +2,52 @@
 import NavbarMobile from "./NavbarMobile.astro";
 ---
 
-<header class="bg-white shadow-md flex justify-between items-center h-16 sticky top-0 z-20 animate-fade-up">
+<header
+  class="bg-white shadow-md flex justify-between items-center h-16 sticky top-0 z-20 animate-fade-up"
+>
   <div
     class="container w-full min-[576px]:max-w-[540px]: mx-auto min-[768px]:max-w-[720px] min-[992px]:max-w-[960px] min-[1200px]:max-w-[1140px] min-[1400px]:max-w-[1320px] flex items-center justify-between px-5 xl:px-0"
   >
-    <img
-      class="w-16 lg:w-20 h-auto"
-      src="/images/logoDg.webp"
-      alt="Logo Baterias DG"
-    />
-    <nav class="hidden lg:flex items-center gap-x-6 font-semibold text-base"> {/*Nav que aparecera a partir de 1024px */}
-      <a class="nav-link text-azul-dg hover:text-azul-dg hover:scale-105 transition-all duration-200 " href="#">Inicio</a>
-      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#beneficios">Beneficios</a>
-      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#revendedores">Revendedores</a>
-      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#testimonios">Testimonios</a>
-      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#servicios">Servicios</a>
-      <a class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200" href="#contacto">Contacto</a>
+    <a href="/" title="Logo DG">
+      <img
+        class="w-16 lg:w-20 h-auto"
+        src="/images/logoDg.webp"
+        alt="Logo Baterias DG"
+      />
+    </a>
+
+    <nav class="hidden lg:flex items-center gap-x-6 font-['Montserrat-600'] font-semibold text-base">
+      {/*Nav que aparecera a partir de 1024px */}
+      <a
+        class="nav-link text-azul-dg hover:text-azul-dg hover:scale-105 transition-all duration-200"
+        href="#">Inicio</a
+      >
+      <a
+        class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200"
+        href="#beneficios">Beneficios</a
+      >
+      <a
+        class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200"
+        href="#revendedores">Revendedores</a
+      >
+      <a
+        class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200"
+        href="#testimonios">Testimonios</a
+      >
+      <a
+        class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200"
+        href="#servicios">Servicios</a
+      >
+      <a
+        class="nav-link hover:text-azul-dg hover:scale-105 transition-all duration-200"
+        href="#contacto">Contacto</a
+      >
       <div class="flex items-center ml-4 gap-x-1">
-        <a href="https://www.facebook.com/bateriasdariogiagnoni/" rel="noreferrer" target="_blank">
+        <a
+          href="https://www.facebook.com/bateriasdariogiagnoni/"
+          rel="noreferrer"
+          target="_blank"
+        >
           <svg
             width="24"
             height="24"
@@ -34,7 +62,11 @@ import NavbarMobile from "./NavbarMobile.astro";
             ></path></svg
           >
         </a>
-        <a href="https://www.instagram.com/bateriasdariogiagnoni" rel="noreferrer" target="_blank">
+        <a
+          href="https://www.instagram.com/bateriasdariogiagnoni"
+          rel="noreferrer"
+          target="_blank"
+        >
           <svg
             width="24"
             height="24"
@@ -57,11 +89,11 @@ import NavbarMobile from "./NavbarMobile.astro";
 </header>
 <script>
   /**Script para el active link */
-   let navLinks = document.querySelectorAll('.nav-link');
-   navLinks.forEach((navLink) => {
-    navLink.addEventListener('click',() => {
-      document.querySelector('.text-azul-dg')?.classList.remove('text-azul-dg');
-      navLink.classList.add('text-azul-dg')
-    })
-   })
+  let navLinks = document.querySelectorAll(".nav-link");
+  navLinks.forEach((navLink) => {
+    navLink.addEventListener("click", () => {
+      document.querySelector(".text-azul-dg")?.classList.remove("text-azul-dg");
+      navLink.classList.add("text-azul-dg");
+    });
+  });
 </script>
